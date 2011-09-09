@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls.defaults import include, patterns
 
 # special urls for flatpage test cases
 urlpatterns = patterns('',
