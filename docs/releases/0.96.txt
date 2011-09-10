@@ -176,7 +176,7 @@ You can now use any callable as the callback in URLconfs (previously, only
 strings that referred to callables were allowed). This allows a much more
 natural use of URLconfs. For example, this URLconf::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
 
     urlpatterns = patterns('',
         ('^myview/$', 'mysite.myapp.views.myview')
@@ -184,7 +184,7 @@ natural use of URLconfs. For example, this URLconf::
 
 can now be rewritten as::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
     from mysite.myapp.views import myview
 
     urlpatterns = patterns('',
@@ -196,7 +196,7 @@ change allows you to apply decorators to views *in your
 URLconf*. Thus, you can make a generic view require login very
 easily::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
     from django.contrib.auth.decorators import login_required
     from django.views.generic.list_detail import object_list
     from mysite.myapp.models import MyModel

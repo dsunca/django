@@ -1830,7 +1830,7 @@ In this example, we register the default ``AdminSite`` instance
 ``django.contrib.admin.site`` at the URL ``/admin/`` ::
 
     # urls.py
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import include, patterns
     from django.contrib import admin
 
     admin.autodiscover()
@@ -1846,7 +1846,7 @@ In this example, we register the ``AdminSite`` instance
 ``myproject.admin.admin_site`` at the URL ``/myadmin/`` ::
 
     # urls.py
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import include, patterns
     from myproject.admin import admin_site
 
     urlpatterns = patterns('',
@@ -1870,7 +1870,7 @@ separate versions of the admin site -- using the ``AdminSite`` instances
 respectively::
 
     # urls.py
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import include, patterns
     from myproject.admin import basic_site, advanced_site
 
     urlpatterns = patterns('',

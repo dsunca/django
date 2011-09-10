@@ -995,7 +995,7 @@ The new class has an almost identical API, but allows instances to be
 used as views. For example, consider the use of the old framework in
 the following :doc:`URLconf </topics/http/urls>`::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
     from myproject.feeds import LatestEntries, LatestEntriesByCategory
 
     feeds = {
@@ -1012,7 +1012,7 @@ the following :doc:`URLconf </topics/http/urls>`::
 
 Using the new Feed class, these feeds can be deployed directly as views::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
     from myproject.feeds import LatestEntries, LatestEntriesByCategory
 
     urlpatterns = patterns('',

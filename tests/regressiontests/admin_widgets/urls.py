@@ -1,5 +1,5 @@
 
-from django.conf.urls.defaults import *
+from django.conf.urls.defaults import include, patterns 
 import widgetadmin
 
 urlpatterns = patterns('',

@@ -1,4 +1,4 @@
-# A URLs file that doesn't use the default
+# A URLs file that doesn't use the
 # from django.conf.urls.defaults import *
 # import pattern.
 from django.conf.urls.defaults import patterns, url

@@ -225,7 +225,7 @@ If you're using the admin site, you need to update your root ``urls.py``.
 
 Old (0.96) ``urls.py``::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import include, patterns 
 
     urlpatterns = patterns('',
         (r'^admin/', include('django.contrib.admin.urls')),
@@ -235,7 +235,7 @@ Old (0.96) ``urls.py``::
 
 New (1.0) ``urls.py``::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
 
     # The next two lines enable the admin and load each admin.py file:
     from django.contrib import admin

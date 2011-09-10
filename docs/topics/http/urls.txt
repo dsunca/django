@@ -65,7 +65,7 @@ Example
 
 Here's a sample URLconf::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
 
     urlpatterns = patterns('',
         (r'^articles/2003/$', 'news.views.special_case_2003'),
@@ -75,9 +75,6 @@ Here's a sample URLconf::
     )
 
 Notes:
-
-    * ``from django.conf.urls.defaults import *`` makes the ``patterns()``
-      function available.
 
     * To capture a value from the URL, just put parenthesis around it.
 
@@ -182,9 +179,6 @@ Syntax of the urlpatterns variable
 ``urlpatterns`` should be a Python list, in the format returned by the function
 :func:`django.conf.urls.defaults.patterns`. Always use ``patterns()`` to create
 the ``urlpatterns`` variable.
-
-Convention is to use ``from django.conf.urls.defaults import *`` at the top of
-your URLconf. This gives your module access to these objects:
 
 .. module:: django.conf.urls.defaults
 
@@ -339,7 +333,7 @@ code duplication.
 
 Here's the example URLconf from the :doc:`Django overview </intro/overview>`::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
 
     urlpatterns = patterns('',
         (r'^articles/(\d{4})/$', 'news.views.year_archive'),
@@ -354,7 +348,7 @@ each view function.
 
 With this in mind, the above example can be written more concisely as::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
 
     urlpatterns = patterns('news.views',
         (r'^articles/(\d{4})/$', 'year_archive'),
@@ -375,7 +369,7 @@ Just add multiple ``patterns()`` objects together, like this:
 
 Old::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
 
     urlpatterns = patterns('',
         (r'^$', 'django.views.generic.date_based.archive_index'),
@@ -385,7 +379,7 @@ Old::
 
 New::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import patterns 
 
     urlpatterns = patterns('django.views.generic.date_based',
         (r'^$', 'archive_index'),
@@ -405,7 +399,7 @@ essentially "roots" a set of URLs below other ones.
 For example, here's the URLconf for the `Django Web site`_ itself. It includes a
 number of other URLconfs::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import include, patterns 
 
     urlpatterns = patterns('',
         (r'^weblog/',        include('django_website.apps.blog.urls.blog')),
@@ -423,7 +417,7 @@ Another possibility is to include additional URL patterns not by specifying the
 URLconf Python module defining them as the `include`_ argument but by using
 directly the pattern list as returned by `patterns`_ instead. For example::
 
-    from django.conf.urls.defaults import *
+    from django.conf.urls.defaults import include, patterns 
 
     extra_patterns = patterns('',
         url(r'reports/(?P<id>\d+)/$', 'credit.views.report', name='credit-reports'),

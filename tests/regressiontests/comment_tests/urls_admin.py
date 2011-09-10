@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls.defaults import include, patterns 
 from django.contrib import admin
 from django.contrib.comments.admin import CommentsAdmin
 from django.contrib.comments.models import Comment
